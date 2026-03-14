@@ -24,7 +24,7 @@ const About = () => {
                         </p>
 
                         <p className="text-textMuted mb-8 leading-relaxed text-lg">
-                            Beyond building production-ready web applications, I have a deep passion for Data Structures and Algorithms. With over 500+ problems solved across platforms and a Top 15% global ranking on LeetCode, I bring highly optimized, scalable solutions to complex backend architectures.
+                            Beyond building scalable web applications, I have a deep passion for Data Structures and Algorithms. With over 500+ problems solved across platforms and a Top 15% global ranking on LeetCode, I excel at applying core CS fundamentals—like OS, DBMS, and Computer Networks—to optimize complex backend architectures.
                         </p>
 
                         <button className="bg-primary hover:bg-primaryDark text-textDark px-8 py-3.5 rounded-xl font-bold transition-all duration-300 text-lg mt-4">

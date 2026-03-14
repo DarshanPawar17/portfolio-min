@@ -17,13 +17,13 @@ const Services = () => {
         },
         {
             icon: <Server className="w-8 h-8 text-textDark" />,
-            title: "Backend & API Architecture",
-            description: "Does your application need secure, lightning-fast endpoints to serve thousands of users?",
+            title: "Backend Architecture",
+            description: "Designing fast, secure, and scalable RESTful APIs with efficient data processing.",
             features: [
-                "RESTful API Development",
-                "Node.js & Express Architecture",
-                "Role-Based Access Control (JWT)",
-                "Under 200ms Query Responses"
+                "Node.js & Express Frameworks",
+                "Authentication & Authorization (JWT)",
+                "Microservices & Docker containerization",
+                "Performance optimization (<200ms loads)"
             ]
         },
         {
@@ -44,16 +44,13 @@ const Services = () => {
             <div className="container mx-auto px-6 md:px-12">
 
                 <div className="text-center mb-16">
-                    <span className="text-primary font-semibold tracking-wide mb-3 block text-sm">Services</span>
+                    <span className="text-primary font-semibold tracking-wide mb-3 block text-sm">Core Proficiencies</span>
                     <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-6">
-                        I'm Specialized In
+                        Technical Expertise
                     </h2>
                     <p className="text-textMuted max-w-2xl mx-auto mb-8">
-                        Consultation and/or Discovery Meetings are required to determine final costs.
+                        Combining strong Academic Foundations (OS, DBMS, CN, OOPS) with modern full-stack development frameworks.
                     </p>
-                    <button className="bg-primary hover:bg-primaryDark text-textDark px-8 py-3.5 rounded-xl font-bold transition-all duration-300 text-lg">
-                        Explore Packages
-                    </button>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

@@ -20,13 +20,13 @@ const Hero = () => {
                     className="max-w-4xl mx-auto"
                 >
                     <span className="text-primary font-semibold text-xl tracking-wide mb-4 block">
-                        Hi, I'm Darshan
+                        Hi, I'm Darshan Pawar
                     </span>
                     <h1 className="text-5xl md:text-7xl font-extrabold text-white mb-6 leading-tight tracking-tight">
                         A Full-Stack Developer & <br />Backend Specialist
                     </h1>
                     <p className="text-base md:text-lg text-textMuted mb-10 max-w-2xl mx-auto leading-relaxed">
-                        I help you to create a professional pixel-perfect, and fully responsive website to get more sales, leads and boost your business. (Specialized in robust backend APIs).
+                        I specialize in building production-ready, scalable web applications using the MERN stack. Armed with strong CS fundamentals and a passion for Data Structures & Algorithms.
                     </p>
 
                     <div className="flex items-center justify-center gap-4">

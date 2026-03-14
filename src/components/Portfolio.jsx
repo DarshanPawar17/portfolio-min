@@ -33,14 +33,14 @@ const Portfolio = () => {
                 <div className="text-center mb-16">
                     <span className="text-primary font-semibold tracking-wide mb-3 block text-sm">Portfolio</span>
                     <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-6">
-                        Projects that helped me launch<br />my career are listed below.
+                        Featured Academic & <br />Personal Projects
                     </h2>
                     <div className="flex justify-center gap-4 mt-8">
                         <button className="bg-primary hover:bg-primaryDark text-textDark px-6 py-2.5 rounded-xl font-bold transition-all duration-300">
-                            Client Work
+                            Full-Stack
                         </button>
                         <button className="bg-primary hover:bg-primaryDark text-textDark px-6 py-2.5 rounded-xl font-bold transition-all duration-300 opacity-80">
-                            Personal Work
+                            Backend APIs
                         </button>
                     </div>
                 </div>
