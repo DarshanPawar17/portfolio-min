@@ -1,8 +1,8 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
-import { Canvas, useFrame } from '@react-three/fiber';
+import { Canvas } from '@react-three/fiber';
 import { Float, Stars, MeshDistortMaterial, RoundedBox, TorusKnot } from '@react-three/drei';
-import { ChevronRight, Code2, Database, Terminal } from 'lucide-react';
+import { Code2, Database, Terminal } from 'lucide-react';
 
 const FloatingShapes = () => {
     return (
