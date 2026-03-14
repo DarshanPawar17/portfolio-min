@@ -9,21 +9,30 @@ const Portfolio = () => {
             description: "Node, Express, MongoDB, Pug, Stripe, JWT. Backed tour booking app supporting dynamic filtering, pagination, and Stripe payments.",
             image: "/natours.png",
             link: "https://natours-travel-bookings.onrender.com/",
-            github: "https://github.com/DarshanPawar17/Natours"
+            github: "https://github.com/DarshanPawar17/Natours",
+            color: "from-emerald-400 to-teal-600",
+            shadow: "hover:shadow-[0_0_40px_rgba(16,185,129,0.15)]",
+            border: "group-hover:border-emerald-500/50"
         },
         {
             title: "HireHub - Job Portal",
             description: "MongoDB, Express.js, React.js, Node.js, Docker. RESTful backend handling 3 roles with RBAC and optimized Mongoose queries for 1K+ users.",
             image: "/hirehub.png",
             link: "https://hire-hub-lake.vercel.app/login",
-            github: "https://github.com/DarshanPawar17/HireHub"
+            github: "https://github.com/DarshanPawar17/HireHub",
+            color: "from-purple-400 to-indigo-600",
+            shadow: "hover:shadow-[0_0_40px_rgba(99,102,241,0.15)]",
+            border: "group-hover:border-indigo-500/50"
         },
         {
             title: "Crime And Safety Indicator",
             description: "MERN, Next.js, REST APIs. Crime analytics platform analyzing 10K+ records with <200ms query response using MongoDB aggregation pipelines.",
             image: "/crime_dashboard.png",
             link: "#",
-            github: "https://github.com/DarshanPawar17/Crime-Safety-Indicator"
+            github: "https://github.com/DarshanPawar17/Crime-Safety-Indicator",
+            color: "from-rose-400 to-red-600",
+            shadow: "hover:shadow-[0_0_40px_rgba(244,63,94,0.15)]",
+            border: "group-hover:border-rose-500/50"
         }
     ];
 
@@ -53,13 +62,16 @@ const Portfolio = () => {
                             viewport={{ once: true }}
                             transition={{ duration: 0.5, delay: index * 0.1 }}
                             key={index}
-                            className={`bg-card rounded-3xl overflow-hidden card-hover group ${index === 2 ? 'lg:col-span-2 lg:w-1/2 lg:mx-auto' : ''}`}
+                            className={`bg-card rounded-3xl overflow-hidden group border border-white/5 transition-all duration-500 hover:-translate-y-2 ${project.shadow} ${project.border} relative ${index === 2 ? 'lg:col-span-2 lg:w-1/2 lg:mx-auto' : ''}`}
                         >
-                            <div className="h-64 sm:h-80 w-full overflow-hidden relative">
-                                <div className="absolute inset-0 bg-primary/20 group-hover:bg-transparent transition-all duration-500 z-10 flex items-center justify-center opacity-0 group-hover:opacity-100">
-                                    <div className="flex gap-4">
-                                        <a href={project.github} className="w-12 h-12 bg-black/80 rounded-full flex items-center justify-center hover:bg-primary transition-all duration-300 text-white"><Github size={20} /></a>
-                                        <a href={project.link} className="w-12 h-12 bg-black/80 rounded-full flex items-center justify-center hover:bg-primary transition-all duration-300 text-white"><ExternalLink size={20} /></a>
+                            {/* Animated Background Glow */}
+                            <div className={`absolute bottom-0 right-0 w-64 h-64 bg-gradient-to-br ${project.color} opacity-0 group-hover:opacity-10 blur-[80px] transition-opacity duration-700 rounded-full pointer-events-none z-0`}></div>
+
+                            <div className="h-64 sm:h-80 w-full overflow-hidden relative z-10">
+                                <div className="absolute inset-0 bg-black/40 group-hover:bg-black/60 backdrop-blur-[2px] transition-all duration-500 z-10 flex items-center justify-center opacity-0 group-hover:opacity-100">
+                                    <div className="flex gap-6 transform translate-y-8 group-hover:translate-y-0 transition-transform duration-500">
+                                        <a href={project.github} className={`w-14 h-14 bg-gradient-to-br ${project.color} rounded-full flex items-center justify-center hover:scale-110 transition-all duration-300 text-white shadow-xl`}><Github size={24} /></a>
+                                        <a href={project.link} className={`w-14 h-14 bg-gradient-to-br ${project.color} rounded-full flex items-center justify-center hover:scale-110 transition-all duration-300 text-white shadow-xl delay-75`}><ExternalLink size={24} /></a>
                                     </div>
                                 </div>
                                 {/* Fallback pattern if image is missing */}
@@ -67,7 +79,7 @@ const Portfolio = () => {
                                 <img
                                     src={project.image}
                                     alt={project.title}
-                                    className="w-full h-full object-cover object-top opacity-60 group-hover:opacity-100 transition-all duration-500 group-hover:scale-105"
+                                    className="w-full h-full object-cover object-top opacity-70 group-hover:opacity-100 transition-all duration-700 group-hover:scale-105"
                                     onError={(e) => {
                                         e.target.style.display = 'none';
                                         e.target.nextSibling.style.display = 'flex';
@@ -78,8 +90,8 @@ const Portfolio = () => {
                                     {project.title}
                                 </div>
                             </div>
-                            <div className="p-8">
-                                <h3 className="text-2xl font-bold text-white mb-3">{project.title}</h3>
+                            <div className="p-8 relative z-10 bg-card/80 backdrop-blur-sm border-t border-white/5">
+                                <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-white/70 transition-all duration-300">{project.title}</h3>
                                 <p className="text-textMuted text-sm leading-relaxed">{project.description}</p>
                             </div>
                         </motion.div>
