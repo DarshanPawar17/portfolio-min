@@ -20,17 +20,17 @@ const Stats = () => {
             border: "hover:border-orange-500/50"
         },
         {
-            value: "8.09",
-            label: "BTech IT CGPA",
-            subLabel: "IIIT Sonepat",
+            value: "GSoC",
+            label: "Open Source Contributor",
+            subLabel: "Google Girl Summer of Code",
             color: "from-emerald-400 to-teal-500",
             shadow: "hover:shadow-[0_0_40px_rgba(20,184,166,0.2)]",
             border: "hover:border-teal-500/50"
         },
         {
-            value: "MERN",
-            label: "Full-Stack Expertise",
-            subLabel: "React, Next.js, Node",
+            value: "Freelance",
+            label: "Web Designer",
+            subLabel: "Outlier Platform",
             color: "from-purple-400 to-pink-500",
             shadow: "hover:shadow-[0_0_40px_rgba(168,85,247,0.2)]",
             border: "hover:border-purple-500/50"
@@ -85,7 +85,7 @@ const Stats = () => {
 
                     <span className="text-primary font-semibold tracking-wide mb-4 block text-sm uppercase tracking-widest relative z-10">Get In Touch</span>
                     <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-10 relative z-10 group-hover:scale-[1.02] transition-transform duration-500">
-                        Let's build an amazing <br /> <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-purple-400">full-stack application</span> together.
+                        Let's connect for new <br /> <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-purple-400">opportunities</span> & collaborations.
                     </h2>
                     <button
                         onClick={() => window.location.href = 'mailto:pawardarshan987@gmail.com'}
