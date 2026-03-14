@@ -20,8 +20,8 @@ const Stats = () => {
             border: "hover:border-orange-500/50"
         },
         {
-            value: "GSoC",
-            label: "Open Source Contributor",
+            value: "Open Source",
+            label: "Contribution",
             subLabel: "Google Girl Summer of Code",
             color: "from-emerald-400 to-teal-500",
             shadow: "hover:shadow-[0_0_40px_rgba(20,184,166,0.2)]",
