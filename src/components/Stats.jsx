@@ -6,26 +6,34 @@ const Stats = () => {
         {
             value: "500+",
             label: "DSA Problems Solved",
-            subLabel: "LeetCode, GFG, Codeforces",
+            subLabel: "LeetCode & GFG",
             color: "from-blue-400 to-indigo-500",
             shadow: "hover:shadow-[0_0_40px_rgba(99,102,241,0.2)]",
             border: "hover:border-indigo-500/50"
         },
         {
-            value: "Top 15%",
-            label: "Global LeetCode Rank",
+            value: "15%",
+            label: "Top Global LeetCode",
             subLabel: "Contest Rating: 1650+",
             color: "from-yellow-400 to-orange-500",
             shadow: "hover:shadow-[0_0_40px_rgba(249,115,22,0.2)]",
             border: "hover:border-orange-500/50"
         },
         {
-            value: "10K+",
-            label: "Records Processed",
-            subLabel: "with < 200ms query response",
+            value: "8.09",
+            label: "BTech IT CGPA",
+            subLabel: "IIIT Sonepat",
             color: "from-emerald-400 to-teal-500",
             shadow: "hover:shadow-[0_0_40px_rgba(20,184,166,0.2)]",
             border: "hover:border-teal-500/50"
+        },
+        {
+            value: "MERN",
+            label: "Full-Stack Expertise",
+            subLabel: "React, Next.js, Node",
+            color: "from-purple-400 to-pink-500",
+            shadow: "hover:shadow-[0_0_40px_rgba(168,85,247,0.2)]",
+            border: "hover:border-purple-500/50"
         }
     ];
 
@@ -42,7 +50,7 @@ const Stats = () => {
                     </h2>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                     {stats.map((stat, index) => (
                         <motion.div
                             initial={{ opacity: 0, scale: 0.9 }}
@@ -77,7 +85,7 @@ const Stats = () => {
 
                     <span className="text-primary font-semibold tracking-wide mb-4 block text-sm uppercase tracking-widest relative z-10">Get In Touch</span>
                     <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-10 relative z-10 group-hover:scale-[1.02] transition-transform duration-500">
-                        Let's build a successful <br /> <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-purple-400">backend architecture</span> together.
+                        Let's build an amazing <br /> <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-purple-400">full-stack application</span> together.
                     </h2>
                     <button
                         onClick={() => window.location.href = 'mailto:pawardarshan987@gmail.com'}

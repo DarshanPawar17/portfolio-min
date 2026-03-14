@@ -50,22 +50,13 @@ const About = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.8, delay: 0.2 }}
-                            className="bg-white/5 backdrop-blur-md border-l-4 border-primary p-6 md:p-8 rounded-r-2xl shadow-[0_4px_30px_rgba(0,0,0,0.1)] hover:bg-white/10 transition-colors duration-500 mb-6"
+                            className="bg-white/5 backdrop-blur-md border-l-4 border-primary p-6 md:p-8 rounded-r-2xl shadow-[0_4px_30px_rgba(0,0,0,0.1)] hover:bg-white/10 transition-colors duration-500 mb-8"
                         >
-                            <p className="text-white/90 leading-relaxed text-lg">
-                                Hi, I'm Darshan Pawar, a passionate Full-Stack Developer specializing in MERN, Next.js, and REST APIs. Currently pursuing my BTech in Information Technology at IIIT Sonepat (CGPA: 8.09), I combine solid software engineering principles with top-tier problem-solving abilities.
+                            <p className="text-white/90 leading-relaxed text-lg mb-4">
+                                Hi, I'm Darshan Pawar. I specialize in the MERN stack and Next.js. Currently pursuing my BTech at IIIT Sonepat, I combine solid software engineering principles with strong problem-solving skills to build scalable, production-ready applications.
                             </p>
-                        </motion.div>
-
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.8, delay: 0.4 }}
-                            className="bg-white/5 backdrop-blur-md border-l-4 border-blue-400 p-6 md:p-8 rounded-r-2xl shadow-[0_4px_30px_rgba(0,0,0,0.1)] hover:bg-white/10 transition-colors duration-500 mb-8"
-                        >
                             <p className="text-white/90 leading-relaxed text-lg">
-                                Beyond building scalable web applications, I have a deep passion for Data Structures and Algorithms. With over 500+ problems solved across platforms and a Top 15% global ranking on LeetCode, I excel at applying core CS fundamentals—like OS, DBMS, and Computer Networks—to optimize complex backend architectures.
+                                Beyond Development, I am deeply passionate about Data Structures and Algorithms, with over 500+ problems solved and a Top 15% global ranking on LeetCode. I am actively seeking an internship opportunity to apply my robust frontend and backend skills.
                             </p>
                         </motion.div>
 
