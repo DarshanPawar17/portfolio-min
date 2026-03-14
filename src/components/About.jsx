@@ -1,22 +1,21 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Canvas } from '@react-three/fiber';
-import { OrbitControls, MeshDistortMaterial, Sphere, Float, Stars } from '@react-three/drei';
+import { OrbitControls, useGLTF, Float, Stars, ContactShadows, Environment } from '@react-three/drei';
 
-// A super cool, tech-looking distorted sphere that the user can drag around
-const AnimatedOrb = () => {
+// A super cool 3D F1 Car model that the user can drag around
+const F1Car = () => {
+    // Load the GLTF model
+    const { scene } = useGLTF('/f1_car.glb');
+
     return (
-        <Float speed={2} rotationIntensity={2} floatIntensity={2}>
-            <Sphere visible args={[1, 100, 200]} scale={2}>
-                <MeshDistortMaterial
-                    color="#A99AF8"
-                    attach="material"
-                    distort={0.4}
-                    speed={2}
-                    roughness={0.2}
-                    metalness={0.8}
-                />
-            </Sphere>
+        <Float speed={2} rotationIntensity={0.5} floatIntensity={0.5}>
+            <primitive
+                object={scene}
+                scale={150}
+                position={[0, -1, 0]}
+                rotation={[0, -Math.PI / 4, 0]}
+            />
         </Float>
     );
 };
@@ -101,13 +100,21 @@ const About = () => {
 
                         {/* Interactive Canvas */}
                         <div className="absolute inset-0 z-10 block">
-                            <Canvas camera={{ position: [0, 0, 5], fov: 45 }}>
+                            <Canvas camera={{ position: [0, 2, 8], fov: 45 }}>
                                 <ambientLight intensity={0.5} />
-                                <directionalLight position={[10, 10, 10]} intensity={1.5} color="#ffffff" />
+                                <directionalLight position={[10, 10, 10]} intensity={1.5} color="#ffffff" castShadow />
                                 <pointLight position={[-10, -10, -10]} intensity={2} color="#A99AF8" />
+                                <Environment preset="city" />
                                 <Stars radius={100} depth={50} count={5000} factor={4} saturation={0} fade speed={1} />
-                                <AnimatedOrb />
-                                <OrbitControls enableZoom={false} autoRotate autoRotateSpeed={2} />
+                                <F1Car />
+                                <ContactShadows position={[0, -1.5, 0]} opacity={0.4} scale={10} blur={2} far={4} />
+                                <OrbitControls
+                                    enableZoom={false}
+                                    autoRotate
+                                    autoRotateSpeed={2}
+                                    maxPolarAngle={Math.PI / 2 + 0.1}
+                                    minPolarAngle={Math.PI / 3}
+                                />
                             </Canvas>
                         </div>
                     </motion.div>
