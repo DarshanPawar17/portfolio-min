@@ -1,48 +1,108 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { motion } from 'framer-motion';
-import { ChevronRight } from 'lucide-react';
+import { Canvas, useFrame } from '@react-three/fiber';
+import { Float, Stars, MeshDistortMaterial, RoundedBox, TorusKnot } from '@react-three/drei';
+import { ChevronRight, Code2, Database, Terminal } from 'lucide-react';
+
+const FloatingShapes = () => {
+    return (
+        <>
+            <Float speed={1.5} rotationIntensity={1.5} floatIntensity={2}>
+                <TorusKnot position={[-4, 2, -5]} scale={0.5}>
+                    <MeshDistortMaterial color="#8b5cf6" speed={2} distort={0.2} roughness={0.1} metalness={0.8} />
+                </TorusKnot>
+            </Float>
+            <Float speed={2} rotationIntensity={2} floatIntensity={1.5}>
+                <RoundedBox args={[1, 1, 1]} position={[4, -1, -3]} scale={0.8} radius={0.2}>
+                    <meshStandardMaterial color="#10b981" roughness={0.1} metalness={0.8} />
+                </RoundedBox>
+            </Float>
+            <Float speed={1.2} rotationIntensity={1} floatIntensity={2}>
+                <mesh position={[-3, -3, -4]} scale={0.6}>
+                    <octahedronGeometry args={[1, 0]} />
+                    <MeshDistortMaterial color="#f43f5e" speed={1.5} distort={0.1} roughness={0.2} metalness={0.7} />
+                </mesh>
+            </Float>
+            <Float speed={2} rotationIntensity={1.5} floatIntensity={2}>
+                <mesh position={[3, 3, -6]} scale={0.7}>
+                    <icosahedronGeometry args={[1, 0]} />
+                    <meshStandardMaterial color="#0ea5e9" roughness={0.2} metalness={0.9} wireframe />
+                </mesh>
+            </Float>
+        </>
+    );
+};
 
 const Hero = () => {
     return (
-        <section id="home" className="min-h-screen relative flex items-center justify-center pt-20 overflow-hidden">
-            {/* Background Image Setup like Rafid Template */}
-            <div
-                className="absolute inset-0 bg-cover bg-center bg-no-repeat -z-20 opacity-30"
-                style={{ backgroundImage: "url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&auto=format&fit=crop&w=2072&q=80')" }}
-            ></div>
-            <div className="absolute inset-0 bg-background/80 -z-10"></div>
+        <section id="home" className="min-h-screen relative flex items-center justify-center pt-20 overflow-hidden bg-[#070314]">
+            {/* 3D Background */}
+            <div className="absolute inset-0 z-0 pointer-events-none">
+                <Canvas camera={{ position: [0, 0, 5], fov: 45 }}>
+                    <ambientLight intensity={0.5} />
+                    <directionalLight position={[10, 10, 10]} intensity={1} color="#ffffff" />
+                    <pointLight position={[-10, 0, -5]} intensity={2} color="#8b5cf6" />
+                    <pointLight position={[10, -5, 0]} intensity={2} color="#10b981" />
+                    <Stars radius={100} depth={50} count={5000} factor={4} saturation={0.5} fade speed={1} />
+                    <FloatingShapes />
+                </Canvas>
+            </div>
+
+            {/* Glowing Background Orbs for ambiance */}
+            <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-primary/20 rounded-full blur-[120px] -z-10 animate-pulse"></div>
+            <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-emerald-500/10 rounded-full blur-[100px] -z-10 animate-pulse delay-1000"></div>
 
             <div className="container mx-auto px-6 text-center z-10">
                 <motion.div
-                    initial={{ opacity: 0, y: 30 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8 }}
-                    className="max-w-4xl mx-auto"
+                    initial={{ opacity: 0, scale: 0.9, y: 30 }}
+                    animate={{ opacity: 1, scale: 1, y: 0 }}
+                    transition={{ duration: 1, type: "spring", bounce: 0.4 }}
+                    className="max-w-5xl mx-auto backdrop-blur-md bg-[#0f0826]/40 p-10 md:p-16 rounded-[40px] border border-white/5 shadow-[0_0_50px_rgba(0,0,0,0.8)] relative overflow-hidden group"
                 >
-                    <span className="text-primary font-semibold text-xl tracking-wide mb-4 block">
-                        Hi, I'm Darshan Pawar
-                    </span>
-                    <h1 className="text-5xl md:text-7xl font-extrabold text-white mb-6 leading-tight tracking-tight">
-                        A Full-Stack Developer & <br />Backend Specialist
+                    {/* Inner glowing border effect */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-emerald-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
+
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.5, delay: 0.2 }}
+                        className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-white/10 bg-white/5 backdrop-blur-md mb-8 shadow-[0_0_20px_rgba(139,92,246,0.2)]"
+                    >
+                        <Terminal size={16} className="text-emerald-400" />
+                        <span className="text-white/80 font-mono text-sm uppercase tracking-[0.2em] font-bold">
+                            Welcome to my universe
+                        </span>
+                    </motion.div>
+
+                    <h1 className="text-6xl md:text-8xl lg:text-[7rem] font-black text-white mb-6 leading-[1.1] tracking-tighter drop-shadow-2xl">
+                        Hi, I'm <br />
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-purple-300 to-emerald-400 filter drop-shadow-[0_0_30px_rgba(169,154,248,0.4)]">Darshan Pawar</span>
                     </h1>
-                    <p className="text-base md:text-lg text-textMuted mb-10 max-w-2xl mx-auto leading-relaxed">
-                        I specialize in building production-ready, scalable web applications using the MERN stack. Armed with strong CS fundamentals and a passion for Data Structures & Algorithms.
+
+                    <h2 className="text-2xl md:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400 mb-10 max-w-3xl mx-auto tracking-tight">
+                        A Full-Stack Developer & Backend Specialist
+                    </h2>
+
+                    <p className="text-lg md:text-xl text-white/70 mb-12 max-w-3xl mx-auto leading-relaxed font-medium">
+                        I engineer production-ready, highly scalable web applications using the MERN stack. Armed with strong CS fundamentals and a relentless passion for Data Structures & Algorithms.
                     </p>
 
-                    <div className="flex items-center justify-center gap-4">
+                    <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
                         <button
                             onClick={() => document.getElementById('portfolio')?.scrollIntoView({ behavior: 'smooth' })}
-                            className="bg-primary hover:bg-primaryDark text-textDark px-8 py-3.5 rounded-xl font-bold transition-all duration-300 text-lg"
+                            className="w-full sm:w-auto bg-gradient-to-r from-primary to-indigo-600 hover:from-primaryDark hover:to-indigo-700 text-white px-10 py-5 rounded-full font-bold transition-all duration-300 text-xl shadow-[0_0_40px_rgba(139,92,246,0.6)] hover:shadow-[0_0_60px_rgba(139,92,246,0.9)] hover:-translate-y-1 flex items-center justify-center gap-3 group/btn border border-white/10"
                         >
+                            <Code2 size={24} className="group-hover/btn:rotate-12 transition-transform" />
                             View Portfolio
                         </button>
                         <a
                             href="https://drive.google.com/file/d/1SXTIXESER9A3giSz0imLbXZ4PeiFw1f6/view?usp=sharing"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="bg-transparent border border-white/20 hover:bg-white/5 text-white px-8 py-3.5 rounded-xl font-bold transition-all duration-300 text-lg"
+                            className="w-full sm:w-auto relative inline-flex items-center justify-center px-10 py-5 font-bold text-white transition-all duration-300 rounded-full border border-white/20 hover:border-emerald-400/80 hover:bg-emerald-400/10 hover:shadow-[0_0_40px_rgba(16,185,129,0.4)] hover:-translate-y-1 gap-3 overflow-hidden group/link text-xl backdrop-blur-md"
                         >
-                            Download Resume
+                            <Database size={24} className="group-hover/link:text-emerald-400 transition-colors" />
+                            <span className="relative z-10">Download Resume</span>
                         </a>
                     </div>
                 </motion.div>
