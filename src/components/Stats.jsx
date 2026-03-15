@@ -22,7 +22,7 @@ const Stats = () => {
         {
             value: "Open Source",
             label: "Contribution",
-            subLabel: "Google Girl Summer of Code",
+            subLabel: "GirlScript Summer of Code 2025",
             color: "from-emerald-400 to-teal-500",
             shadow: "hover:shadow-[0_0_40px_rgba(20,184,166,0.2)]",
             border: "hover:border-teal-500/50"
