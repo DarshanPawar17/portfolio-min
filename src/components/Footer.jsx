@@ -15,7 +15,7 @@ const GfgIcon = ({ size = 20 }) => (
 
 const Footer = () => {
     return (
-        <footer className="border-t border-white/10 bg-background py-16">
+        <footer className="border-t border-white/10 bg-transparent py-16">
             <div className="container mx-auto px-6 text-center">
                 <div className="flex justify-center items-center gap-4 md:gap-6 mb-8 flex-wrap">
                     <a href="https://github.com/DarshanPawar17" target="_blank" rel="noreferrer" className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-primary hover:border-primary hover:text-white transition-all duration-300">

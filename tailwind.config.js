@@ -7,8 +7,8 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: "#1E1E1E", // Slightly lighter dark grey for the main background
-        card: "#2A2A2A", // Solid grey for cards
+        background: "#030014", // Deep space violet/blue for the main background
+        card: "#0B061A", // Darker solid card to make glass pop better
         primary: "#A99AF8", // The exact light purple from the template
         primaryDark: "#8B7AE0", // Hover state for buttons
         textDark: "#111111", // Text inside buttons

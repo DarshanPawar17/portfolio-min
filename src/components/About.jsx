@@ -1,20 +1,19 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import { motion } from 'framer-motion';
 import { Canvas } from '@react-three/fiber';
-import { OrbitControls, useGLTF, Float, Stars, ContactShadows, Environment } from '@react-three/drei';
+import { OrbitControls, useGLTF, Float, Stars, ContactShadows, Environment, Center, Bounds, Html } from '@react-three/drei';
 
 // A super cool 3D F1 Car model that the user can drag around
 const F1Car = () => {
     // Load the GLTF model
-    const { scene } = useGLTF('/f1_car.glb');
+    const { scene } = useGLTF('/realistic_f1.glb');
 
     return (
         <Float speed={2} rotationIntensity={0.5} floatIntensity={0.5}>
             <primitive
                 object={scene}
-                scale={150}
-                position={[0, -1, 0]}
-                rotation={[0, -Math.PI / 4, 0]}
+                scale={1}
+                position={[0, 0, 0]}
             />
         </Float>
     );
@@ -97,7 +96,13 @@ const About = () => {
                                 <pointLight position={[-10, -10, -10]} intensity={2} color="#A99AF8" />
                                 <Environment preset="city" />
                                 <Stars radius={100} depth={50} count={5000} factor={4} saturation={0} fade speed={1} />
-                                <F1Car />
+                                <Suspense fallback={<Html center><span className="text-white backdrop-blur-md px-4 py-2 rounded-full border border-white/20 text-sm whitespace-nowrap bg-black/50">Loading 3D Model...</span></Html>}>
+                                    <Bounds fit clip observe margin={1.2}>
+                                        <Center>
+                                            <F1Car />
+                                        </Center>
+                                    </Bounds>
+                                </Suspense>
                                 <ContactShadows position={[0, -1.5, 0]} opacity={0.4} scale={10} blur={2} far={4} />
                                 <OrbitControls
                                     enableZoom={false}

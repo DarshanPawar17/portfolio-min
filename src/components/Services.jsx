@@ -49,7 +49,7 @@ const Services = () => {
     ];
 
     return (
-        <section id="specialties" className="py-24 bg-background relative">
+        <section id="specialties" className="py-24 relative bg-transparent">
             <div className="container mx-auto px-6 md:px-12">
 
                 <div className="text-center mb-16">

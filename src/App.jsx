@@ -1,4 +1,5 @@
 import React from 'react'
+import Background from './components/Background'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import Marquee from './components/Marquee'
@@ -10,7 +11,8 @@ import Footer from './components/Footer'
 
 function App() {
   return (
-    <div className="bg-background text-textLight min-h-screen">
+    <div className="bg-transparent text-textLight min-h-screen relative">
+      <Background />
       <Navbar />
       <Hero />
       <Marquee />

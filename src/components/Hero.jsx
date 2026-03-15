@@ -35,22 +35,15 @@ const FloatingShapes = () => {
 
 const Hero = () => {
     return (
-        <section id="home" className="min-h-screen relative flex items-center justify-center pt-20 overflow-hidden bg-[#070314]">
-            {/* 3D Background */}
+        <section id="home" className="min-h-screen relative flex items-center justify-center pt-20 overflow-hidden bg-transparent z-10">
+            {/* 3D Floating Shapes Foreground Focus */}
             <div className="absolute inset-0 z-0 pointer-events-none">
                 <Canvas camera={{ position: [0, 0, 5], fov: 45 }}>
                     <ambientLight intensity={0.5} />
                     <directionalLight position={[10, 10, 10]} intensity={1} color="#ffffff" />
-                    <pointLight position={[-10, 0, -5]} intensity={2} color="#8b5cf6" />
-                    <pointLight position={[10, -5, 0]} intensity={2} color="#10b981" />
-                    <Stars radius={100} depth={50} count={5000} factor={4} saturation={0.5} fade speed={1} />
                     <FloatingShapes />
                 </Canvas>
             </div>
-
-            {/* Glowing Background Orbs for ambiance */}
-            <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-primary/20 rounded-full blur-[120px] -z-10 animate-pulse"></div>
-            <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-emerald-500/10 rounded-full blur-[100px] -z-10 animate-pulse delay-1000"></div>
 
             <div className="container mx-auto px-6 text-center z-10">
                 <motion.div
